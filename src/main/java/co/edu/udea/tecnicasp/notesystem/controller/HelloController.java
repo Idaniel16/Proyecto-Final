@@ -1,4 +1,4 @@
-package co.edu.udea.tecnicasp.notesystem;
+package co.edu.udea.tecnicasp.notesystem.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

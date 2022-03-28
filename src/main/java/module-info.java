@@ -7,4 +7,6 @@ module co.edu.udea.tecnicasp.notesystem {
 
     opens co.edu.udea.tecnicasp.notesystem to javafx.fxml;
     exports co.edu.udea.tecnicasp.notesystem;
+    exports co.edu.udea.tecnicasp.notesystem.controller;
+    opens co.edu.udea.tecnicasp.notesystem.controller to javafx.fxml;
 }
