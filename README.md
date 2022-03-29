@@ -1,5 +1,5 @@
 # NoteSystem
-Sistema de notas con el framework de JavaFX
+Sistema de notas con JavaFX
 Integrantes: 
 Iván mejía
 
