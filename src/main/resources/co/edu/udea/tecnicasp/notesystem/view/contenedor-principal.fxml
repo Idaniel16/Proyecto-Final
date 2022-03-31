@@ -4,10 +4,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane fx:id="contenedorPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #669999;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.udea.tecnicasp.notesystem.controller.ContenedorPrincipalController">
@@ -34,22 +31,10 @@
       </MenuBar>
    </top>
    <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
-         <children>
-            <Label text="Bienvenido" textFill="WHITE">
-               <font>
-                  <Font name="Sylfaen" size="36.0" />
-               </font></Label>
-            <ImageView fitHeight="247.0" fitWidth="433.0" pickOnBounds="true" style="visibility: none;">
-               <image>
-                  <Image url="@../../../../../../../../../../../Downloads/Ing_sistemas.jpg" />
-               </image>
-            </ImageView>
-            <Label text="Notes System" textFill="WHITE">
-               <font>
-                  <Font name="Sylfaen" size="36.0" />
-               </font></Label>
-         </children>
-      </VBox>
+      <Label text="Notes System" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Juice ITC" size="96.0" />
+         </font>
+      </Label>
    </center>
 </BorderPane>

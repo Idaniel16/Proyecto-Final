@@ -31,9 +31,9 @@
       </MenuBar>
    </top>
    <center>
-      <Label text="Bienvenido" BorderPane.alignment="CENTER">
+      <Label text="Notes System" BorderPane.alignment="CENTER">
          <font>
-            <Font name="Courier New" size="72.0" />
+            <Font name="Juice ITC" size="96.0" />
          </font>
       </Label>
    </center>
