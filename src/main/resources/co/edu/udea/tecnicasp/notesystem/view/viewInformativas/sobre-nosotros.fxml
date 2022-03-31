@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #669999;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label text="¿Quienes Somos?" textFill="WHITE">
+               <font>
+                  <Font name="Forte" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label layoutX="36.0" layoutY="130.0" prefHeight="27.0" prefWidth="529.0" text="Somos estudiantes de ingeneria de sistemas de la UdeA">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="166.0" prefHeight="27.0" prefWidth="529.0" text="este es el proyecto final del curso de Tecnicas y programacion.">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="Label" />
+      <Label layoutX="275.0" layoutY="228.0" text="Autores:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="271.0" layoutY="255.0" text="Ivan Mejia">
+         <font>
+            <Font name="System Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="257.0" layoutY="282.0" text="Jonatan Romero">
+         <font>
+            <Font name="System Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="259.0" layoutY="325.0" text="Contactanos:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="233.0" layoutY="357.0" text="ingenierosTP@outlook.es">
+         <font>
+            <Font name="System Italic" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
