@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="contenedorPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" 
-fx:controller="co.edu.udea.tecnicasp.notesystem.controller.ContenedorPrincipalController">
-   <bottom>
-      <Label text="Label" BorderPane.alignment="CENTER" />
-   </bottom>
+<BorderPane fx:id="contenedorPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #669999;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.udea.tecnicasp.notesystem.controller.ContenedorPrincipalController">
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar focusTraversable="false" style="-fx-background-color: #99CCFF;" BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -30,4 +30,11 @@ fx:controller="co.edu.udea.tecnicasp.notesystem.controller.ContenedorPrincipalCo
         </menus>
       </MenuBar>
    </top>
+   <center>
+      <Label text="Bienvenido" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Courier New" size="72.0" />
+         </font>
+      </Label>
+   </center>
 </BorderPane>
