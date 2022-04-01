@@ -10,7 +10,6 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#mnuInicio_action" text="Inicio" />
               <MenuItem mnemonicParsing="false" onAction="#mnuCerrar_action" text="Salir" />
             </items>
           </Menu>
@@ -21,23 +20,22 @@
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#mnuFuncion_action" text="¿Como funciona?" />
-                  <MenuItem mnemonicParsing="false" onAction="#mnuQuienes_action" text="¿Quienes somos?" />
-            </items>
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Soporte" />
+               </items>
           </Menu>
         </menus>
       </MenuBar>
    </top>
    <center>
-      <AnchorPane prefHeight="329.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="119.0" layoutY="127.0" text="Notes System">
+            <Label alignment="CENTER" prefHeight="379.0" prefWidth="599.0" text="Notes System">
                <font>
                   <Font name="Juice ITC" size="96.0" />
                </font>
             </Label>
          </children>
-      </AnchorPane>
+      </VBox>
    </center>
 </BorderPane>
