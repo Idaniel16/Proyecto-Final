@@ -9,7 +9,8 @@ import java.io.IOException;
 
 public class HelloApplication extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws IOException
+    {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("view/contenedor-principal.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 450);
         stage.setTitle("Notes System");
@@ -17,7 +18,8 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         launch();
     }
 }

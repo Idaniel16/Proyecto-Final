@@ -31,4 +31,16 @@ public class ContenedorPrincipalController
         contenedorPrincipal.setCenter(calculoRapido);
     }
 
+    public void mnuFuncion_action() throws IOException
+    {
+        AnchorPane funcion = FXMLLoader.load(HelloApplication.class.getResource("view/viewInformativas/descripcion-aplicacion.fxml"));
+        contenedorPrincipal.setCenter(funcion);
+    }
+    public void mnuQuienes_action() throws IOException
+    {
+        AnchorPane quienes = FXMLLoader.load(HelloApplication.class.getResource("view/viewInformativas/sobre-nosotros.fxml"));
+        contenedorPrincipal.setCenter(quienes);
+    }
+
+
 }
