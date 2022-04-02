@@ -20,7 +20,7 @@ public class ContenedorPrincipalController
     }
     public void mnuAgregarNotar_action() throws IOException
     {
-        AnchorPane agregarNota = FXMLLoader.load(HelloApplication.class.getResource("view/agregar-nota.fxml"));
+        AnchorPane agregarNota = FXMLLoader.load(HelloApplication.class.getResource("view/agregar-cursos.fxml"));
         contenedorPrincipal.setCenter(agregarNota);
 
 

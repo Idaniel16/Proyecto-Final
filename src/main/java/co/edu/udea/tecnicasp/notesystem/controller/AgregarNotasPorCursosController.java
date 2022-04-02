@@ -1,6 +1,4 @@
 package co.edu.udea.tecnicasp.notesystem.controller;
 
-public class AgregarNotaController
-{
-
+public class AgregarNotasPorCursosController {
 }
