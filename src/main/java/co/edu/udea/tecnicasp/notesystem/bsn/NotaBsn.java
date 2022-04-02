@@ -1,15 +1,21 @@
 package co.edu.udea.tecnicasp.notesystem.bsn;
 
+import co.edu.udea.tecnicasp.notesystem.dao.NotaDao;
+import co.edu.udea.tecnicasp.notesystem.dao.impl.NotaDAOFile;
+import co.edu.udea.tecnicasp.notesystem.model.Notas;
+
 public class NotaBsn
 {
-    public double CalcularNota(double porcentaje, double nota)
-    {
+    private NotaDao notaDao;
 
-            double porcentajeDecimal = porcentaje / 100;
-            double promNota;
-            promNota = nota * porcentajeDecimal;
-
-
-        return promNota;
+    public NotaBsn(){
+        this.notaDao = new NotaDAOFile();
     }
+
+    public void registrarNota(Notas notas){
+
+            this.notaDao.registrarNota(notas);
+
+    }
+
 }

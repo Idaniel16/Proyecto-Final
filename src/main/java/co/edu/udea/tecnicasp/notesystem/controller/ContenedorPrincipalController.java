@@ -18,9 +18,15 @@ public class ContenedorPrincipalController
         System.exit(0);
 
     }
-    public void mnuAgregarNotar_action() throws IOException
+    public void mnuAgregarCurso_action() throws IOException
     {
-        AnchorPane agregarNota = FXMLLoader.load(HelloApplication.class.getResource("view/agregar-cursos.fxml"));
+        AnchorPane agregarCurso = FXMLLoader.load(HelloApplication.class.getResource("view/agregar-cursos.fxml"));
+        contenedorPrincipal.setCenter(agregarCurso);
+
+
+    }
+    public void mnuAgregarNota_action() throws IOException {
+        AnchorPane agregarNota = FXMLLoader.load(HelloApplication.class.getResource("view/agregar-notas-por-curso.fxml"));
         contenedorPrincipal.setCenter(agregarNota);
 
 
@@ -30,6 +36,11 @@ public class ContenedorPrincipalController
         AnchorPane calculoRapido = FXMLLoader.load(HelloApplication.class.getResource("view/calculo-rapido.fxml"));
         contenedorPrincipal.setCenter(calculoRapido);
     }
+
+
+
+
+
 
     public void mnuFuncion_action() throws IOException
     {

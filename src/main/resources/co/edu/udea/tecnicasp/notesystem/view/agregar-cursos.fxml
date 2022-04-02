@@ -21,26 +21,33 @@
                   </columnConstraints>
                   <rowConstraints>
                   <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
                       <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="38.0" valignment="CENTER" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="55.0" valignment="CENTER" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="55.0" valignment="CENTER" vgrow="SOMETIMES" />
                   </rowConstraints>
                   <children>
-                      <TextField style="-fx-background-radius: 33;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                      <Label text="Nombre del curso" GridPane.rowIndex="1">
+                      <TextField fx:id="#txtNombre" style="-fx-background-radius: 33;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                      <Label text="Nombre del curso" GridPane.rowIndex="2">
                      <font>
                         <Font name="Forte" size="14.0" />
                      </font>
                   </Label>
-                      <Button defaultButton="true" mnemonicParsing="false" text="Agregar" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                      <Button defaultButton="true" mnemonicParsing="false" text="Limpiar" GridPane.rowIndex="3" />
-                  <TextField layoutX="167.0" layoutY="42.0" style="-fx-background-radius: 33;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Label layoutX="49.0" layoutY="46.0" text="Creditos " GridPane.rowIndex="2">
+                      <Button defaultButton="true" mnemonicParsing="false" onAction="#agregar_action" text="Agregar" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                      <Button defaultButton="true" mnemonicParsing="false" onAction="#limpiar_action" text="Limpiar" GridPane.rowIndex="4" />
+                  <TextField fx:id="#txtCreditos" layoutX="167.0" layoutY="42.0" style="-fx-background-radius: 33;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label layoutX="49.0" layoutY="46.0" text="Creditos " GridPane.rowIndex="3">
                      <font>
                         <Font name="Forte" size="14.0" />
                      </font>
                   </Label>
+                  <Label text="Codigo del curso" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="#txtCodigo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   </children>
               </GridPane>
          </children>

@@ -26,7 +26,7 @@
                     <children>
                         <TextField fx:id="txtPorcentaje" style="-fx-background-radius: 13;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                         <TextField fx:id="txtNota" style="-fx-background-radius: 13;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Button alignment="CENTER" cacheShape="false" centerShape="false" contentDisplay="CENTER" defaultButton="true" focusTraversable="false" mnemonicParsing="false" onAction="#calcular_action" scaleShape="false" style="-fx-background-radius: 5;" text="Calcular" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                        <Button alignment="CENTER" cacheShape="false" centerShape="false" contentDisplay="CENTER" defaultButton="true" focusTraversable="false" mnemonicParsing="false" onAction="#cmdCalcular_action" scaleShape="false" style="-fx-background-radius: 5;" text="Calcular" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2">
                             <GridPane.margin>
                                 <Insets top="10.0" />
                             </GridPane.margin>
@@ -34,7 +34,7 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" defaultButton="true" mnemonicParsing="false" onAction="#agregar_action" style="-fx-background-radius: 5; -fx-alignment: center;" text="Agregar" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Button alignment="BASELINE_LEFT" defaultButton="true" mnemonicParsing="false" onAction="#cmdAgregar_action" style="-fx-background-radius: 5; -fx-alignment: center;" text="Agregar" GridPane.columnIndex="1" GridPane.rowIndex="2">
                             <GridPane.margin>
                                 <Insets top="10.0" />
                             </GridPane.margin>
@@ -58,8 +58,7 @@
                                 <Font name="Forte" size="14.0" />
                             </font>
                         </Label>
-                  <Label text="Seleccionar curso" />
-                  <ComboBox prefWidth="150.0" GridPane.columnIndex="1" />
+                  <ComboBox fx:id="cmbCurso" prefWidth="150.0" promptText="Seleccionar curso" />
                     </children>
                 </GridPane>
                 <HBox alignment="CENTER" fillHeight="false" spacing="50.0">

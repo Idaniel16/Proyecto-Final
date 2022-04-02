@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="contenedorPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #669999;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.udea.tecnicasp.notesystem.controller.ContenedorPrincipalController">
+<BorderPane fx:id="contenedorPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #669999;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.udea.tecnicasp.notesystem.controller.ContenedorPrincipalController">
    <top>
       <MenuBar focusTraversable="false" style="-fx-background-color: #99CCFF;" BorderPane.alignment="CENTER">
         <menus>
@@ -15,7 +15,8 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Options">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#mnuAgregarNotar_action" text="Agregar Curso" />
+              <MenuItem mnemonicParsing="false" onAction="#mnuAgregarCurso_action" text="Agregar Curso" />
+                  <MenuItem mnemonicParsing="false" onAction="#mnuAgregarNota_action" text="Agregar Nota" />
                   <MenuItem mnemonicParsing="false" onAction="#mnuCalculoRapido_action" text="Cálculo rapido" />
             </items>
           </Menu>

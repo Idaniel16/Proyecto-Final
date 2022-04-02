@@ -5,7 +5,7 @@ public class Notas
     private Double notas;
     private Double porcentajes;
 
-    private Materia meteria;
+    private Curso meteria;
 
     public Notas(Double notas, Double porcentajes) {
         this.notas = notas;
@@ -28,11 +28,11 @@ public class Notas
         this.porcentajes = porcentajes;
     }
 
-    public Materia getMeteria() {
+    public Curso getCurso() {
         return meteria;
     }
 
-    public void setMeteria(Materia meteria) {
+    public void setCurso(Curso meteria) {
         this.meteria = meteria;
     }
 }

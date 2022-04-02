@@ -1,6 +1,7 @@
 package co.edu.udea.tecnicasp.notesystem.controller;
 
 import co.edu.udea.tecnicasp.notesystem.bsn.NotaBsn;
+import co.edu.udea.tecnicasp.notesystem.bsn.NotaRapidaBsn;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -17,11 +18,11 @@ public class CalculoRapidoController
     @FXML
     private Label lblPorcentaje;
 
-    private NotaBsn notaBsn;
+    private NotaRapidaBsn notaRapidaBsn;
 
     public CalculoRapidoController()
     {
-        notaBsn = new NotaBsn();
+        notaRapidaBsn = new NotaRapidaBsn();
     }
 
 
@@ -29,9 +30,7 @@ public class CalculoRapidoController
     {
         double notaIngresada = Double.parseDouble(txtNota.getText());
         double porcentajeIgresado = Double.parseDouble(txtPorcentaje.getText());
-        double AcumNota = notaBsn.CalcularNota(porcentajeIgresado, notaIngresada);
-        String nt = Double.toString(AcumNota);
-        lblNota.setText(nt);
+     
 
     }
     public void calcular_action()
