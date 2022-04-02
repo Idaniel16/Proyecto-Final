@@ -2,4 +2,5 @@
 Sistema de notas con JavaFX
 Integrantes: 
 Iván mejía
+Jonatan Romero
 
