@@ -14,12 +14,9 @@ public class CursoBsn {
         this.cursoDao = new CursoDAOFile();
     }
 
-    public void registrarCurso(Curso curso) {
-
+    public void registrarCurso(Curso curso)
+    {
             this.cursoDao.registrarCurso(curso);
-
-
-
     }
 
     public List<Curso> listarCurso() {

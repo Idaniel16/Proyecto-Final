@@ -22,6 +22,7 @@ public class AgregarNotasPorCursosController
     private TextField txtPorcentaje;
 
 
+
     private CursoBsn cursoBsn;
     private NotaBsn notaBsn;
 
@@ -51,6 +52,10 @@ public class AgregarNotasPorCursosController
         Notas notas = new Notas(nota1, porcentaje1);
         notas.setCurso(cursoSeleccionado);
         this.notaBsn.registrarNota(notas);
+    }
+    public void cmdCalcular_action()
+    {
+
     }
 }
 

@@ -26,15 +26,14 @@ public class CursoDAOFile implements CursoDao {
     @Override
     public void registrarCurso(Curso curso) {
 
-        // String usuarioString = usuario.getIdentificacion()+ ";"+usuario.getNombres()+";"+usuario.getApellidos()+";"+usuario.getCorreo()+"\n";
-        String cursoString = String.format("%d;%s;%s;%s\n", curso.getNombre(), curso.getCreditos());
+        String cursoString = String.format("%d;%s;%s\n", curso.getCodigo(),curso.getNombre(), curso.getCreditos());
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {
             fileWriter = new FileWriter(cursoBD, true);
             bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.write(cursoString);
-       //     bufferedWriter.close();
+            bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
