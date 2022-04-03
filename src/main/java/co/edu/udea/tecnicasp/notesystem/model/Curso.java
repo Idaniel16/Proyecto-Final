@@ -47,4 +47,11 @@ public class Curso
     public void setNotas(List<Notas> notas) {
         this.notas = notas;
     }
+
+    @Override
+    public String toString() {
+        return this.codigo + " - " + this.getNombre();
+    }
+
 }
+

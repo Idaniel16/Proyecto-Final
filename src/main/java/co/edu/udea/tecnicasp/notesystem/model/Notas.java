@@ -35,4 +35,5 @@ public class Notas
     public void setCurso(Curso meteria) {
         this.meteria = meteria;
     }
+
 }

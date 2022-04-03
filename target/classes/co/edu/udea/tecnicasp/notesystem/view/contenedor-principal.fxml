@@ -15,7 +15,8 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Options">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#mnuAgregarCurso_action" text="Agregar Curso" />
+                  <MenuItem mnemonicParsing="false" onAction="#mnuAgregarCurso_action" text="Agregar Curso" />
+                  <MenuItem mnemonicParsing="false" onAction="#mnuListaDeCursos_action" text="Lista de Cursos" />
                   <MenuItem mnemonicParsing="false" onAction="#mnuAgregarNota_action" text="Agregar Nota" />
                   <MenuItem mnemonicParsing="false" onAction="#mnuCalculoRapido_action" text="Cálculo rapido" />
             </items>

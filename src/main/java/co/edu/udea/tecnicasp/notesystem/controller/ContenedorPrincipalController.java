@@ -25,6 +25,13 @@ public class ContenedorPrincipalController
 
 
     }
+    public void mnuListaDeCursos_action() throws IOException
+    {
+        AnchorPane listaCursos = FXMLLoader.load(HelloApplication.class.getResource("view/lista-de-cursos.fxml"));
+        contenedorPrincipal.setCenter(listaCursos);
+
+
+    }
     public void mnuAgregarNota_action() throws IOException {
         AnchorPane agregarNota = FXMLLoader.load(HelloApplication.class.getResource("view/agregar-notas-por-curso.fxml"));
         contenedorPrincipal.setCenter(agregarNota);
