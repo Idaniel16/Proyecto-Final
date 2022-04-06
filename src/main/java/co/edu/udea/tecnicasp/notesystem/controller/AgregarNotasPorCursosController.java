@@ -54,10 +54,11 @@ public class AgregarNotasPorCursosController
         cmlPorcentaje.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().getPorcentajes()).asObject());
         cargarListaNotas();
     }
-    private void cargarListaNotas() {
 
-        Integer cursoSeleccionado = this.cmbCurso.getValue().getCodigo();
-        List<Notas> notasList = this.notaBsn.listarNotasPorCurso(cursoSeleccionado);
+    private void cargarListaNotas() {
+        Curso cursoSeleccionado = this.cmbCurso.getValue();
+       // Integer cod = cursoSeleccionado.getCodigo();
+        List<Notas> notasList = this.notaBsn.listarNotasPorCurso(cursoSeleccionado.getCodigo());
         ObservableList<Notas> notasObservableList = FXCollections.observableList(notasList);
         tblNotas.setItems(notasObservableList);
     }

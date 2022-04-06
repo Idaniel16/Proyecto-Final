@@ -10,7 +10,8 @@ public class CursoBsn {
 
     private CursoDao cursoDao;
 
-    public CursoBsn() {
+    public CursoBsn()
+    {
         this.cursoDao = new CursoDAOFile();
     }
 

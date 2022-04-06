@@ -61,10 +61,10 @@
               </GridPane>
             <HBox alignment="CENTER" fillHeight="false" spacing="50.0">
                <children>
-                  <TableView prefHeight="200.0" prefWidth="200.0">
+                  <TableView fx:id="tblNotas" prefHeight="200.0" prefWidth="200.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="Notas" />
-                      <TableColumn prefWidth="75.0" text="Porcentajes " />
+                      <TableColumn fx:id="cmlNotas" prefWidth="75.0" text="Notas" />
+                      <TableColumn fx:id="cmlPorcentajes" prefWidth="75.0" text="Porcentajes " />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

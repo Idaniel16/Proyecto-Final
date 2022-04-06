@@ -12,4 +12,5 @@ public interface NotaDao
 
     Notas consultarNotasPorCodigoCurso(Integer codCurso);
 
+
 }

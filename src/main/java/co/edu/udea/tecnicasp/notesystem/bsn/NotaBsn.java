@@ -12,7 +12,8 @@ public class NotaBsn
     private NotaDao notaDao;
 
 
-    public NotaBsn(){
+    public NotaBsn()
+    {
         this.notaDao = new NotaDAOFile();
     }
 
@@ -25,6 +26,7 @@ public class NotaBsn
     public List<Notas> listarNotasPorCurso(Integer codigoCurso) {
         return this.notaDao.listarNotasPorCurso(codigoCurso);
     }
+
 
    /* public Notas consultarNotasPorCodigoCurso(Integer codCurso)
     {

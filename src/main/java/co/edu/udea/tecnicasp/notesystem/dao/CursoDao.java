@@ -11,4 +11,6 @@ public interface CursoDao
     List<Curso>ListarCursos();
 
     Curso consultarCursoPorCod(Integer cod);
+
+
 }
