@@ -2,11 +2,12 @@ package co.edu.udea.tecnicasp.notesystem.bsn;
 
 import co.edu.udea.tecnicasp.notesystem.dao.CalculoRapidoDao;
 import co.edu.udea.tecnicasp.notesystem.dao.impl.CalculoRapidoDAOList;
-import co.edu.udea.tecnicasp.notesystem.model.CalculoRapido;
-
+import co.edu.udea.tecnicasp.notesystem.model.NotaRapida;
+import co.edu.udea.tecnicasp.notesystem.model.Notas;
 import java.util.List;
 
-public class CalculoRapidoBsn {
+public class CalculoRapidoBsn
+{
 
     private CalculoRapidoDao calculoRapidoDao;
 
@@ -15,17 +16,18 @@ public class CalculoRapidoBsn {
         this.calculoRapidoDao = new CalculoRapidoDAOList();
     }
 
-    public void guardarCalculoRapido(CalculoRapido calculoRapido) {
+    public void guardarCalculoRapido(NotaRapida notaRapida)
+    {
 
-            this.calculoRapidoDao.guardarCalculoRapido(calculoRapido);
+            this.calculoRapidoDao.guardarCalculoRapido(notaRapida);
 
     }
-
-    public List<CalculoRapido> consultarCalculoRapido() {
-        return this.calculoRapidoDao.consultarCalculoRapido();
+    public List<NotaRapida> consultarCalculoRapido()
+    {
+        return this.calculoRapidoDao.consultarOjectNotaRapida();
     }
 
-    public Double calcularNota(CalculoRapido calculoRapido)
+    public Double calcularNota(NotaRapida calculoRapido)
     {
 
         Double nota = calculoRapido.getNota();

@@ -1,12 +1,12 @@
 package co.edu.udea.tecnicasp.notesystem.model;
 
-public class CalculoRapido
+public class NotaRapida
 {
    private Double nota;
    private Double porcentaje;
 
 
-    public CalculoRapido(Double nota, Double porcentaje) {
+    public NotaRapida(Double nota, Double porcentaje) {
         this.nota = nota;
         this.porcentaje = porcentaje;
 

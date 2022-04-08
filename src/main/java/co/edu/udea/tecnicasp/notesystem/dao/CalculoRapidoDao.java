@@ -1,15 +1,14 @@
 package co.edu.udea.tecnicasp.notesystem.dao;
 
-import co.edu.udea.tecnicasp.notesystem.model.CalculoRapido;
-import co.edu.udea.tecnicasp.notesystem.model.Curso;
+import co.edu.udea.tecnicasp.notesystem.model.NotaRapida;
 
 import java.util.List;
 
 public interface CalculoRapidoDao {
 
-    void guardarCalculoRapido(CalculoRapido calculoRapido);
+    void guardarCalculoRapido(NotaRapida notaRapida);
 
-    List<CalculoRapido> consultarCalculoRapido();
+    List<NotaRapida> consultarOjectNotaRapida();
 
 
 

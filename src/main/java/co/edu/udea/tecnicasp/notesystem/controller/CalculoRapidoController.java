@@ -1,21 +1,14 @@
 package co.edu.udea.tecnicasp.notesystem.controller;
 
 import co.edu.udea.tecnicasp.notesystem.bsn.CalculoRapidoBsn;
-import co.edu.udea.tecnicasp.notesystem.model.CalculoRapido;
-import co.edu.udea.tecnicasp.notesystem.model.Curso;
+import co.edu.udea.tecnicasp.notesystem.model.NotaRapida;
 import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-
 import java.util.List;
-
 public class CalculoRapidoController
 {
 
@@ -28,13 +21,16 @@ public class CalculoRapidoController
     @FXML
     private Label lblPorcentaje;
     @FXML
-    private TableView<CalculoRapido> tblNotas;
+    private TableView<NotaRapida> tblNotas;
     @FXML
-    private TableColumn<CalculoRapido, Double> cmlNotas;
+    private TableColumn<NotaRapida, Double> cmlNotas;
     @FXML
-    private TableColumn<CalculoRapido, Double> cmlPorcentajes;
-    private CalculoRapido nuevoCalculo;
+    private TableColumn<NotaRapida, Double> cmlPorcentajes;
+
+   // private CalculoRapido nuevoCalculo;
+
     private  Double notaAcumulada;
+
     private Double porcentajeAcumulado;
 
 
@@ -58,10 +54,11 @@ public class CalculoRapidoController
     {
         Double notaIngresada = Double.parseDouble(txtNota.getText());
         Double porcentajeIgresado = Double.parseDouble(txtPorcentaje.getText());
-        nuevoCalculo = new CalculoRapido(notaIngresada,porcentajeIgresado);
+        NotaRapida notasRapidas = new NotaRapida(notaIngresada,porcentajeIgresado);
 
-        this.tblNotas.getItems().add(nuevoCalculo);
-        calculoRapidoBsn.guardarCalculoRapido(nuevoCalculo);
+        this.tblNotas.getItems().add(notasRapidas);
+        calculoRapidoBsn.guardarCalculoRapido(notasRapidas);
+
         porcentajeAcumulado = porcentajeAcumulado + porcentajeIgresado;
 
         txtNota.clear();
@@ -70,10 +67,21 @@ public class CalculoRapidoController
     }
     public void calcular_action()
     {
-        notaAcumulada = notaAcumulada + calculoRapidoBsn.calcularNota(nuevoCalculo);
+      // List<CalculoRapido> calculoRapidoList = calculoRapidoBsn.consultarCalculoRapido();
+
+        /*notaAcumulada = notaAcumulada + calculoRapidoBsn.calcularNota(nuevoCalculo);
         lblNota.setText(notaAcumulada.toString());
         lblPorcentaje.setText(porcentajeAcumulado.toString());
+        */
 
+        List<NotaRapida> notaRapidaList = calculoRapidoBsn.consultarCalculoRapido();
+        Double notaFinal = 0.0, porcentajeAcumulado = 0.0;
+        for(int i=0; i<notaRapidaList.size(); i++){
+           notaFinal = notaFinal + notaRapidaList.get(i).getNota()*(notaRapidaList.get(i).getPorcentaje()/100);
+           porcentajeAcumulado = porcentajeAcumulado + notaRapidaList.get(i).getPorcentaje();
+        }
+        lblNota.setText(notaFinal.toString());
+        lblPorcentaje.setText(porcentajeAcumulado.toString());
     }
 
 }
