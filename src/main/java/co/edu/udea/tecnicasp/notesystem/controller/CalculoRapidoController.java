@@ -67,12 +67,6 @@ public class CalculoRapidoController
     }
     public void calcular_action()
     {
-      // List<CalculoRapido> calculoRapidoList = calculoRapidoBsn.consultarCalculoRapido();
-
-        /*notaAcumulada = notaAcumulada + calculoRapidoBsn.calcularNota(nuevoCalculo);
-        lblNota.setText(notaAcumulada.toString());
-        lblPorcentaje.setText(porcentajeAcumulado.toString());
-        */
 
         List<NotaRapida> notaRapidaList = calculoRapidoBsn.consultarCalculoRapido();
         Double notaFinal = 0.0, porcentajeAcumulado = 0.0;

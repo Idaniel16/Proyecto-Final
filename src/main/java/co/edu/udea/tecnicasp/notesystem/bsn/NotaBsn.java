@@ -23,7 +23,7 @@ public class NotaBsn
 
     }
 
-    public List<Notas> listarNotasPorCurso(Integer codigoCurso) {
+    public List<Notas> cunsultarNotasPorCurso(Integer codigoCurso) {
         return this.notaDao.listarNotasPorCurso(codigoCurso);
     }
 
