@@ -57,13 +57,16 @@ public class AgregarCursoController
 
         Curso curso = new Curso(cod,nombreIngresado,creditos);
         cursoBsn.registrarCurso(curso);
+
+        limpiarCampos();
     }
 
-    public void limpiar_action() {
-        this.limpiarCampos();
+    public void limpiar_action()
+    {
+        limpiarCampos();
     }
 
-    private void limpiarCampos()
+    public void limpiarCampos()
     {
         txtCodigo.clear();
         txtNombre.clear();
