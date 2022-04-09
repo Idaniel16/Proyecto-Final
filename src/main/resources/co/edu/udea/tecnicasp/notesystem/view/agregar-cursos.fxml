@@ -50,7 +50,7 @@
                   </Label>
                   <Label text="Codigo del curso" GridPane.rowIndex="1">
                      <font>
-                        <Font name="System Bold Italic" size="12.0" />
+                        <Font name="Forte" size="14.0" />
                      </font>
                   </Label>
                   <TextField fx:id="txtCodigo" style="-fx-background-radius: 33;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
