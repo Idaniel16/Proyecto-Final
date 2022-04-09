@@ -2,8 +2,11 @@ package co.edu.udea.tecnicasp.notesystem.controller;
 
 import co.edu.udea.tecnicasp.notesystem.bsn.CursoBsn;
 import co.edu.udea.tecnicasp.notesystem.model.Curso;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 
 public class AgregarCursoController
 {
@@ -16,7 +19,30 @@ public class AgregarCursoController
 
     private CursoBsn cursoBsn;
 
-    public AgregarCursoController() {
+//    @FXML
+//    private void initialize()
+//    {
+//        clmIdentificacion.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getIdentificacion()).asObject());
+//        clmNombres.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.));
+//
+//        txtCodigo.setTextFormatter(new TextFormatter<>(change -> {
+//            if (change.getControlNewText().matches("^\\d+$") || change.getControlNewText().isEmpty()) {
+//                return change;
+//            }
+//            return null;
+//        }));
+//
+//        txtNombre.setTextFormatter(new TextFormatter<>(change -> {
+//            if (change.getControlNewText().matches("^[\\p{L} .'-]+$") || change.getControlNewText().isEmpty()) {
+//                return change;
+//            }
+//            return null;
+//        }));
+//
+//    }
+
+    public AgregarCursoController()
+    {
         this.cursoBsn = new CursoBsn();
     }
 
@@ -37,12 +63,11 @@ public class AgregarCursoController
         this.limpiarCampos();
     }
 
-    private void limpiarCampos() {
+    private void limpiarCampos()
+    {
+        txtCodigo.clear();
         txtNombre.clear();
         txtCreditos.clear();
-
-
-
     }
 
 }
