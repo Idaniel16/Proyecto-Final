@@ -27,19 +27,11 @@ public class CalculoRapidoController
     @FXML
     private TableColumn<NotaRapida, Double> cmlPorcentajes;
 
-   // private CalculoRapido nuevoCalculo;
-
-    private  Double notaAcumulada;
-
-    private Double porcentajeAcumulado;
-
 
     private CalculoRapidoBsn calculoRapidoBsn;
 
     public CalculoRapidoController()
     {
-        notaAcumulada = 0.0;
-        porcentajeAcumulado = 0.0;
         calculoRapidoBsn = new CalculoRapidoBsn();
     }
 
@@ -58,8 +50,6 @@ public class CalculoRapidoController
 
         this.tblNotas.getItems().add(notasRapidas);
         calculoRapidoBsn.guardarCalculoRapido(notasRapidas);
-
-        porcentajeAcumulado = porcentajeAcumulado + porcentajeIgresado;
 
         txtNota.clear();
         txtPorcentaje.clear();

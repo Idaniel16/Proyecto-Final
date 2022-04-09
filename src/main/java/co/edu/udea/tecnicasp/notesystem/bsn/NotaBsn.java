@@ -27,9 +27,4 @@ public class NotaBsn
         return this.notaDao.listarNotasPorCurso(codigoCurso);
     }
 
-
-   /* public Notas consultarNotasPorCodigoCurso(Integer codCurso)
-    {
-        return this.notaDao.consultarNotasPorCodigoCurso(codCurso);
-    }*/
 }

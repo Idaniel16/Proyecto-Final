@@ -85,7 +85,8 @@
                                         <Font name="Forte" size="14.0" />
                                     </font>
                                 </Label>
-                                <Label fx:id="lblPorcentaje" layoutX="64.0" layoutY="138.0" text="100%" />
+                                <Label fx:id="lblPorcentaje" layoutX="64.0" layoutY="138.0" text="0%" />
+                        <Label fx:id="lblNotaSemestre" text="Label" />
                             </children>
                             <HBox.margin>
                                 <Insets bottom="10.0" />

@@ -2,11 +2,9 @@ package co.edu.udea.tecnicasp.notesystem.controller;
 
 import co.edu.udea.tecnicasp.notesystem.bsn.CursoBsn;
 import co.edu.udea.tecnicasp.notesystem.model.Curso;
-import co.edu.udea.tecnicasp.notesystem.model.NotaRapida;
 import co.edu.udea.tecnicasp.notesystem.model.Notas;
 import co.edu.udea.tecnicasp.notesystem.bsn.NotaBsn;
 import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -33,7 +31,6 @@ public class AgregarNotasPorCursosController
     private Label lblNota;
     @FXML
     private Label lblPorcentaje;
-
 
     private CursoBsn cursoBsn;
     private NotaBsn notaBsn;
@@ -66,9 +63,6 @@ public class AgregarNotasPorCursosController
         }
 
     }
-    public void cmdLimpiarCampos_action(){
-
-    }
 
     public void cmdAgregar_action(){
 
@@ -92,16 +86,13 @@ public class AgregarNotasPorCursosController
         Curso cursoSeleccionado = this.cmbCurso.getValue();
         List<Notas> notasList = notaBsn.cunsultarNotasPorCurso(cursoSeleccionado.getCodigo());
         Double notaFinal = 0.0, porcentajeAcumulado = 0.0;
-        Double acumuladoCreditos = 0.0, acumuladoProductoNotasPorCreditos= 0.0;
+
         for(int i=0; i<notasList.size(); i++){
             notaFinal = notaFinal + notasList.get(i).getNotas()*(notasList.get(i).getPorcentajes()/100);
             porcentajeAcumulado = porcentajeAcumulado + notasList.get(i).getPorcentajes();
         }
         lblNota.setText(notaFinal.toString());
         lblPorcentaje.setText(porcentajeAcumulado.toString());
-        
-        List<Curso> cursoList = cursoBsn.listarCurso();
-        acumuladoProductoNotasPorCreditos = acumuladoProductoNotasPorCreditos + notaFinal;
 
     }
 }

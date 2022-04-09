@@ -19,6 +19,7 @@ public class ListaDeCursosController {
     private TableColumn<Curso, String> clmNombres;
     @FXML
     private TableColumn<Curso, Integer> clmCreditos;
+
     private CursoBsn cursoBsn;
 
     public ListaDeCursosController() {
@@ -36,4 +37,5 @@ public class ListaDeCursosController {
         ObservableList<Curso> cursoObservableList = FXCollections.observableList(cursoList);
         tblCursos.setItems(cursoObservableList);
     }
+
 }

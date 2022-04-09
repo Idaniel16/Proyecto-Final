@@ -27,15 +27,4 @@ public class CalculoRapidoBsn
         return this.calculoRapidoDao.consultarOjectNotaRapida();
     }
 
-    public Double calcularNota(NotaRapida calculoRapido)
-    {
-
-        Double nota = calculoRapido.getNota();
-        Double porcentaje = calculoRapido.getPorcentaje();
-        Double notaDecimal = nota * (porcentaje/100);
-
-        return notaDecimal;
-    }
-
-
 }
