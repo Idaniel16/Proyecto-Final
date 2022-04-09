@@ -17,10 +17,10 @@
                   <Font name="Forte" size="24.0" />
                </font>
             </Label>
-            <TableView fx:id="tblCursos" prefHeight="200.0" prefWidth="575.0" style="-fx-background-color: #CCCCFF;">
+            <TableView fx:id="tblCursos" cacheShape="false" prefHeight="200.0" prefWidth="575.0" style="-fx-background-color: #CCCCFF;">
               <columns>
-                <TableColumn fx:id="clmNombres" prefWidth="75.0" text="Nombre" />
-                <TableColumn fx:id="clmCreditos" prefWidth="75.0" text="Creditos" />
+                <TableColumn fx:id="clmNombres" prefWidth="75.0" style="-fx-alignment: CENTER;" text="Nombre" />
+                <TableColumn fx:id="clmCreditos" prefWidth="75.0" style="-fx-alignment: CENTER;" text="Creditos" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
