@@ -7,7 +7,6 @@ public class Curso
     private Integer codigo;
     private String nombre;
     private Integer creditos;
-
     private List<Notas> notas;
 
     public Curso(Integer codigo, String nombre, Integer creditos) {

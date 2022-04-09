@@ -65,8 +65,8 @@
                     <children>
                         <TableView fx:id="tblNotas" prefHeight="200.0" prefWidth="200.0">
                             <columns>
-                                <TableColumn fx:id="cmlNotas" prefWidth="75.0" text="Notas" />
-                                <TableColumn fx:id="cmlPorcentaje" prefWidth="75.0" text="Porcentajes " />
+                                <TableColumn fx:id="clmNotas" prefWidth="75.0" text="Notas" />
+                                <TableColumn fx:id="clmPorcentaje" prefWidth="75.0" text="Porcentajes " />
                             </columns>
                             <columnResizePolicy>
                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
