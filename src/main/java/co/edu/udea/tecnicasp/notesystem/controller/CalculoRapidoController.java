@@ -1,6 +1,7 @@
 package co.edu.udea.tecnicasp.notesystem.controller;
 
 import co.edu.udea.tecnicasp.notesystem.bsn.CalculoRapidoBsn;
+import co.edu.udea.tecnicasp.notesystem.dao.exceptions.NoExistenNotasException;
 import co.edu.udea.tecnicasp.notesystem.model.NotaRapida;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXML;
@@ -38,18 +39,10 @@ public class CalculoRapidoController
         cmlNotas.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().getNota()).asObject());
         cmlPorcentajes.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().getPorcentaje()).asObject());
 
-        txtNota.setTextFormatter(new TextFormatter<>(change -> {
-            if (change.getControlNewText().matches("^\\d+$") || change.getControlNewText().isEmpty()) {
-                return change;
-            }
-            return null;
-        }));
-        txtPorcentaje.setTextFormatter(new TextFormatter<>(change -> {
-            if (change.getControlNewText().matches("^\\d+$") || change.getControlNewText().isEmpty()) {
-                return change;
-            }
-            return null;
-        }));
+        validacionNumerica(txtNota);
+        validacionNumerica(txtPorcentaje);
+
+
     }
 
 
@@ -71,12 +64,24 @@ public class CalculoRapidoController
 
         List<NotaRapida> notaRapidaList = calculoRapidoBsn.consultarCalculoRapido();
         Double notaFinal = 0.0, porcentajeAcumulado = 0.0;
-        for(int i=0; i<notaRapidaList.size(); i++){
-           notaFinal = notaFinal + notaRapidaList.get(i).getNota()*(notaRapidaList.get(i).getPorcentaje()/100);
-           porcentajeAcumulado = porcentajeAcumulado + notaRapidaList.get(i).getPorcentaje();
+        for (int i = 0; i < notaRapidaList.size(); i++)
+        {
+            notaFinal = notaFinal + notaRapidaList.get(i).getNota() * (notaRapidaList.get(i).getPorcentaje() / 100);
+            porcentajeAcumulado = porcentajeAcumulado + notaRapidaList.get(i).getPorcentaje();
         }
         lblNota.setText(notaFinal.toString());
-        lblPorcentaje.setText(porcentajeAcumulado.toString()+"%");
+        lblPorcentaje.setText(porcentajeAcumulado.toString() + "%");
+
+    }
+
+    public static void validacionNumerica(TextField campo)
+    {
+        campo.setTextFormatter(new TextFormatter<>(change -> {
+            if (change.getControlNewText().matches("^\\d+$") || change.getControlNewText().isEmpty()) {
+                return change;
+            }
+            return null;
+        }));
     }
 
 }

@@ -26,12 +26,7 @@ public class AgregarCursoController
     private void initialize()
     {
 
-        txtCodigo.setTextFormatter(new TextFormatter<>(change -> {
-            if (change.getControlNewText().matches("^\\d+$") || change.getControlNewText().isEmpty()) {
-                return change;
-            }
-            return null;
-        }));
+        validacionNumerica(txtCodigo);
 
         txtNombre.setTextFormatter(new TextFormatter<>(change -> {
             if (change.getControlNewText().matches("^[\\p{L} .'-]+$") || change.getControlNewText().isEmpty()) {
@@ -40,12 +35,7 @@ public class AgregarCursoController
             return null;
         }));
 
-        txtCreditos.setTextFormatter(new TextFormatter<>(change -> {
-            if (change.getControlNewText().matches("^\\d+$") || change.getControlNewText().isEmpty()) {
-                return change;
-            }
-            return null;
-        }));
+        validacionNumerica(txtCreditos);
 
     }
 
@@ -107,6 +97,16 @@ public class AgregarCursoController
         alert.setHeaderText("Proceso Exitoso");
         alert.setContentText("El curso se agregó correctamente");
         alert.showAndWait();
+    }
+
+    public static void validacionNumerica(TextField campo)
+    {
+        campo.setTextFormatter(new TextFormatter<>(change -> {
+            if (change.getControlNewText().matches("^\\d+$") || change.getControlNewText().isEmpty()) {
+                return change;
+            }
+            return null;
+        }));
     }
 
 }

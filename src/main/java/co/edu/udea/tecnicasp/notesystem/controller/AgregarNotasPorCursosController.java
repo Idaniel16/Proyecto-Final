@@ -1,6 +1,7 @@
 package co.edu.udea.tecnicasp.notesystem.controller;
 
 import co.edu.udea.tecnicasp.notesystem.bsn.CursoBsn;
+import co.edu.udea.tecnicasp.notesystem.dao.exceptions.NoExistenNotasException;
 import co.edu.udea.tecnicasp.notesystem.model.Curso;
 import co.edu.udea.tecnicasp.notesystem.model.Notas;
 import co.edu.udea.tecnicasp.notesystem.bsn.NotaBsn;
@@ -54,18 +55,8 @@ public class AgregarNotasPorCursosController
         this.clmNotas.setCellValueFactory(cellValue -> new SimpleDoubleProperty(cellValue.getValue().getNotas()).asObject());
         this.clmPorcentaje.setCellValueFactory(cellValue -> new SimpleDoubleProperty(cellValue.getValue().getPorcentajes()).asObject());
 
-        txtNota.setTextFormatter(new TextFormatter<>(change -> {
-            if (change.getControlNewText().matches("^\\d+$") || change.getControlNewText().isEmpty()) {
-                return change;
-            }
-            return null;
-        }));
-        txtPorcentaje.setTextFormatter(new TextFormatter<>(change -> {
-            if (change.getControlNewText().matches("^\\d+$") || change.getControlNewText().isEmpty()) {
-                return change;
-            }
-            return null;
-        }));
+        validacionNumerica(txtNota);
+        validacionNumerica(txtPorcentaje);
 
     }
 
@@ -95,19 +86,42 @@ public class AgregarNotasPorCursosController
         txtNota.clear();
 
     }
-    public void cmdCalcular_action()
-    {
-        Curso cursoSeleccionado = this.cmbCurso.getValue();
-        List<Notas> notasList = notaBsn.cunsultarNotasPorCurso(cursoSeleccionado.getCodigo());
-        Float notaFinal =0f, porcentajeAcumulado = 0f;
+    public void cmdCalcular_action() throws NoExistenNotasException {
+        try {
+            Curso cursoSeleccionado = this.cmbCurso.getValue();
+            List<Notas> notasList = notaBsn.cunsultarNotasPorCurso(cursoSeleccionado.getCodigo());
+            Float notaFinal = 0f, porcentajeAcumulado = 0f;
 
-        for(int i=0; i<notasList.size(); i++){
-            notaFinal +=  notasList.get(i).getNotas()*(notasList.get(i).getPorcentajes()/100);
-            porcentajeAcumulado += notasList.get(i).getPorcentajes();
+            for (int i = 0; i < notasList.size(); i++) {
+                notaFinal += notasList.get(i).getNotas() * (notasList.get(i).getPorcentajes() / 100);
+                porcentajeAcumulado += notasList.get(i).getPorcentajes();
+            }
+            lblNota.setText(notaFinal.toString());
+            lblPorcentaje.setText(porcentajeAcumulado.toString() + "%");
+        }catch (NullPointerException npe)
+        {
+            alertInformativo();
         }
-        lblNota.setText(notaFinal.toString());
-        lblPorcentaje.setText(porcentajeAcumulado.toString()+"%");
 
+    }
+
+    public static void validacionNumerica(TextField campo)
+    {
+        campo.setTextFormatter(new TextFormatter<>(change -> {
+            if (change.getControlNewText().matches("^\\d+$") || change.getControlNewText().isEmpty()) {
+                return change;
+            }
+            return null;
+        }));
+    }
+
+    public void alertInformativo()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Info");
+        alert.setHeaderText("Agregar Notas al curso");
+        alert.setContentText("No se puede calcular la nota porque no hay notas para operar");
+        alert.showAndWait();
     }
 }
 
