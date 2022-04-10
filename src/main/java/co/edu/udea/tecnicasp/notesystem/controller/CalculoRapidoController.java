@@ -48,15 +48,20 @@ public class CalculoRapidoController
 
     public void agregar_action()
     {
-        Double notaIngresada = Double.parseDouble(txtNota.getText());
-        Double porcentajeIgresado = Double.parseDouble(txtPorcentaje.getText());
-        NotaRapida notasRapidas = new NotaRapida(notaIngresada,porcentajeIgresado);
+        try {
+            Double notaIngresada = Double.parseDouble(txtNota.getText());
+            Double porcentajeIgresado = Double.parseDouble(txtPorcentaje.getText());
+            NotaRapida notasRapidas = new NotaRapida(notaIngresada, porcentajeIgresado);
 
-        this.tblNotas.getItems().add(notasRapidas);
-        calculoRapidoBsn.guardarCalculoRapido(notasRapidas);
+            this.tblNotas.getItems().add(notasRapidas);
+            calculoRapidoBsn.guardarCalculoRapido(notasRapidas);
 
-        txtNota.clear();
-        txtPorcentaje.clear();
+            txtNota.clear();
+            txtPorcentaje.clear();
+        }catch (NumberFormatException nfe)
+        {
+            alertInformativoCamposVacios();
+        }
 
     }
     public void calcular_action()
@@ -94,6 +99,14 @@ public class CalculoRapidoController
         alert.setTitle("Info");
         alert.setHeaderText("No hay notas");
         alert.setContentText("No tienes notas para efectuar la operacion, favor agregar notas");
+        alert.showAndWait();
+    }
+    public void alertInformativoCamposVacios()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Info");
+        alert.setHeaderText("Campo(s) vacio(s)");
+        alert.setContentText("nota y porcentaje son campos requeridos");
         alert.showAndWait();
     }
 

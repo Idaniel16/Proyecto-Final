@@ -44,29 +44,37 @@ public class AgregarCursoController
         this.cursoBsn = new CursoBsn();
     }
 
-    public void agregar_action() throws CursoYaExiste {
-        String codigoIngresado = txtCodigo.getText();
-        String nombreIngresado = txtNombre.getText();
-        String creditosIngresado = txtCreditos.getText();
-
-        Integer cod = Integer.parseInt(codigoIngresado);
-        Integer creditos = Integer.parseInt(creditosIngresado);
-
-        Curso curso = new Curso(cod,nombreIngresado,creditos);
+    public void agregar_action() throws CursoYaExiste
+    {
         try {
-            cursoBsn.registrarCurso(curso);
-            alertInformativo();
+            String codigoIngresado = txtCodigo.getText();
+            String nombreIngresado = txtNombre.getText();
+            String creditosIngresado = txtCreditos.getText();
+
+            Integer cod = Integer.parseInt(codigoIngresado);
+            Integer creditos = Integer.parseInt(creditosIngresado);
+            if(nombreIngresado.isBlank())
+            {
+                alertInformativoCamposVacios();
+                return;
+            }
+
+            Curso curso = new Curso(cod, nombreIngresado, creditos);
+            try {
+                cursoBsn.registrarCurso(curso);
+                alertInformativo();
+                limpiarCampos();
+                txtCodigo.requestFocus();
+            } catch (CursoYaExiste cye) {
+                alertError();
+                limpiarCampos();
+                txtCodigo.requestFocus();
+            }
             limpiarCampos();
-            txtCodigo.requestFocus();
-        }catch (CursoYaExiste cye)
+        }catch (NumberFormatException nfe)
         {
-            alertError();
-            limpiarCampos();
-            txtCodigo.requestFocus();
+            alertInformativoCamposVacios();
         }
-
-
-        limpiarCampos();
     }
 
     public void limpiar_action()
@@ -107,6 +115,14 @@ public class AgregarCursoController
             }
             return null;
         }));
+    }
+    public void alertInformativoCamposVacios()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Info");
+        alert.setHeaderText("Campo(s) vacio(s)");
+        alert.setContentText("Los datos codigo del curso , Nombre del curso y Creditos son Obligatorios , favor digitarlos");
+        alert.showAndWait();
     }
 
 }

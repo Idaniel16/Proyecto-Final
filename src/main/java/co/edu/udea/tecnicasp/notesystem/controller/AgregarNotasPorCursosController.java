@@ -60,30 +60,40 @@ public class AgregarNotasPorCursosController
 
     }
 
-    private void cmbCursoItemSeleccionado_listener(Curso cursoNuevo) {
+    private void cmbCursoItemSeleccionado_listener(Curso cursoNuevo)
+    {
         if (cursoNuevo != null) {
             List<Notas> notasCurso = this.notaBsn.cunsultarNotasPorCurso(cursoNuevo.getCodigo());
             ObservableList<Notas> notasCursoObservables = FXCollections.observableList(notasCurso);
             tblNotas.setItems(notasCursoObservables);
         }
-
     }
 
-    public void cmdAgregar_action(){
+    public void cmdAgregar_action()
+    {
+        try {
+            Curso cursoSeleccionado = this.cmbCurso.getValue();
+            String nota = txtNota.getText();
+            String porcentaje = txtPorcentaje.getText();
 
-        Curso cursoSeleccionado = this.cmbCurso.getValue();
-        String nota = txtNota.getText();
-        String porcentaje = txtPorcentaje.getText();
+            Float nota1 = Float.parseFloat(nota);
+            Float porcentaje1 = Float.parseFloat(porcentaje);
 
-        Float nota1 = Float.parseFloat(nota);
-        Float porcentaje1 = Float.parseFloat(porcentaje);
-
-        Notas notas = new Notas(nota1, porcentaje1);
-        notas.setCurso(cursoSeleccionado);
-        this.notaBsn.registrarNota(notas);
-        this.tblNotas.getItems().add(notas);
-        txtPorcentaje.clear();
-        txtNota.clear();
+            Notas notas = new Notas(nota1, porcentaje1);
+            try {
+                notas.setCurso(cursoSeleccionado);
+                this.notaBsn.registrarNota(notas);
+                this.tblNotas.getItems().add(notas);
+            }catch (NullPointerException npe)
+            {
+                alertInformativoSeleccion();
+            }
+            txtPorcentaje.clear();
+            txtNota.clear();
+        }catch (NumberFormatException nfe)
+        {
+            alertInformativoCamposVacios();
+        }
 
     }
     public void cmdCalcular_action() throws NoExistenNotasException {
@@ -133,6 +143,23 @@ public class AgregarNotasPorCursosController
         alert.setTitle("Info");
         alert.setHeaderText("No hay notas");
         alert.setContentText("No tienes notas para efectuar la operacion, favor agregar notas al curso");
+        alert.showAndWait();
+    }
+
+    public void alertInformativoCamposVacios()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Info");
+        alert.setHeaderText("Campos vacios");
+        alert.setContentText("Tienes que digitar la nota y el porcentaje");
+        alert.showAndWait();
+    }
+    public void alertInformativoSeleccion()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Info");
+        alert.setHeaderText("Seleccionar Curso");
+        alert.setContentText("No Tienes seleccionado ningun curso");
         alert.showAndWait();
     }
 }
