@@ -76,7 +76,7 @@ public class CalculoRapidoController
            porcentajeAcumulado = porcentajeAcumulado + notaRapidaList.get(i).getPorcentaje();
         }
         lblNota.setText(notaFinal.toString());
-        lblPorcentaje.setText(porcentajeAcumulado.toString());
+        lblPorcentaje.setText(porcentajeAcumulado.toString()+"%");
     }
 
 }
