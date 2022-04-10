@@ -19,27 +19,32 @@ public class AgregarCursoController
 
     private CursoBsn cursoBsn;
 
-//    @FXML
-//    private void initialize()
-//    {
-//        clmIdentificacion.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getIdentificacion()).asObject());
-//        clmNombres.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.));
-//
-//        txtCodigo.setTextFormatter(new TextFormatter<>(change -> {
-//            if (change.getControlNewText().matches("^\\d+$") || change.getControlNewText().isEmpty()) {
-//                return change;
-//            }
-//            return null;
-//        }));
-//
-//        txtNombre.setTextFormatter(new TextFormatter<>(change -> {
-//            if (change.getControlNewText().matches("^[\\p{L} .'-]+$") || change.getControlNewText().isEmpty()) {
-//                return change;
-//            }
-//            return null;
-//        }));
-//
-//    }
+    @FXML
+    private void initialize()
+    {
+
+        txtCodigo.setTextFormatter(new TextFormatter<>(change -> {
+            if (change.getControlNewText().matches("^\\d+$") || change.getControlNewText().isEmpty()) {
+                return change;
+            }
+            return null;
+        }));
+
+        txtNombre.setTextFormatter(new TextFormatter<>(change -> {
+            if (change.getControlNewText().matches("^[\\p{L} .'-]+$") || change.getControlNewText().isEmpty()) {
+                return change;
+            }
+            return null;
+        }));
+
+        txtCreditos.setTextFormatter(new TextFormatter<>(change -> {
+            if (change.getControlNewText().matches("^\\d+$") || change.getControlNewText().isEmpty()) {
+                return change;
+            }
+            return null;
+        }));
+
+    }
 
     public AgregarCursoController()
     {

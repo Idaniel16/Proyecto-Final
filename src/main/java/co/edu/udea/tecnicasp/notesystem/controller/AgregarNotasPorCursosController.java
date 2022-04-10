@@ -35,6 +35,7 @@ public class AgregarNotasPorCursosController
     private CursoBsn cursoBsn;
     private NotaBsn notaBsn;
 
+
     public AgregarNotasPorCursosController(){
         this.cursoBsn = new CursoBsn();
         this.notaBsn = new NotaBsn();
@@ -52,6 +53,19 @@ public class AgregarNotasPorCursosController
         );
         this.clmNotas.setCellValueFactory(cellValue -> new SimpleDoubleProperty(cellValue.getValue().getNotas()).asObject());
         this.clmPorcentaje.setCellValueFactory(cellValue -> new SimpleDoubleProperty(cellValue.getValue().getPorcentajes()).asObject());
+
+        txtNota.setTextFormatter(new TextFormatter<>(change -> {
+            if (change.getControlNewText().matches("^\\d+$") || change.getControlNewText().isEmpty()) {
+                return change;
+            }
+            return null;
+        }));
+        txtPorcentaje.setTextFormatter(new TextFormatter<>(change -> {
+            if (change.getControlNewText().matches("^\\d+$") || change.getControlNewText().isEmpty()) {
+                return change;
+            }
+            return null;
+        }));
 
     }
 
