@@ -2,29 +2,29 @@ package co.edu.udea.tecnicasp.notesystem.model;
 
 public class Notas
 {
-    private Double notas;
-    private Double porcentajes;
+    private Float notas;
+    private Float porcentajes;
 
     private Curso meteria;
 
-    public Notas(Double notas, Double porcentajes) {
+    public Notas(Float notas, Float porcentajes) {
         this.notas = notas;
         this.porcentajes = porcentajes;
     }
 
-    public Double getNotas() {
+    public Float getNotas() {
         return notas;
     }
 
-    public void setNotas(Double notas) {
+    public void setNotas(Float notas) {
         this.notas = notas;
     }
 
-    public Double getPorcentajes() {
+    public Float getPorcentajes() {
         return porcentajes;
     }
 
-    public void setPorcentajes(Double porcentajes) {
+    public void setPorcentajes(Float porcentajes) {
         this.porcentajes = porcentajes;
     }
 

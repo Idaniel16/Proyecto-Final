@@ -84,8 +84,8 @@ public class AgregarNotasPorCursosController
         String nota = txtNota.getText();
         String porcentaje = txtPorcentaje.getText();
 
-        Double nota1 = Double.parseDouble(nota);
-        Double porcentaje1 = Double.parseDouble(porcentaje);
+        Float nota1 = Float.parseFloat(nota);
+        Float porcentaje1 = Float.parseFloat(porcentaje);
 
         Notas notas = new Notas(nota1, porcentaje1);
         notas.setCurso(cursoSeleccionado);
@@ -99,14 +99,14 @@ public class AgregarNotasPorCursosController
     {
         Curso cursoSeleccionado = this.cmbCurso.getValue();
         List<Notas> notasList = notaBsn.cunsultarNotasPorCurso(cursoSeleccionado.getCodigo());
-        Double notaFinal = 0.0, porcentajeAcumulado = 0.0;
+        Float notaFinal =0f, porcentajeAcumulado = 0f;
 
         for(int i=0; i<notasList.size(); i++){
-            notaFinal = notaFinal + notasList.get(i).getNotas()*(notasList.get(i).getPorcentajes()/100);
-            porcentajeAcumulado = porcentajeAcumulado + notasList.get(i).getPorcentajes();
+            notaFinal +=  notasList.get(i).getNotas()*(notasList.get(i).getPorcentajes()/100);
+            porcentajeAcumulado += notasList.get(i).getPorcentajes();
         }
         lblNota.setText(notaFinal.toString());
-        lblPorcentaje.setText(porcentajeAcumulado.toString());
+        lblPorcentaje.setText(porcentajeAcumulado.toString()+"%");
 
     }
 }

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F0FFF0;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.udea.tecnicasp.notesystem.controller.AgregarNotasPorCursosController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F0FFF0;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.udea.tecnicasp.notesystem.controller.AgregarNotasPorCursosController">
     <children>
         <VBox prefHeight="408.0" prefWidth="600.0" spacing="20.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
             <children>
@@ -85,8 +85,7 @@
                                         <Font name="Forte" size="14.0" />
                                     </font>
                                 </Label>
-                                <Label fx:id="lblPorcentaje" layoutX="64.0" layoutY="138.0" text="0%" />
-                        <Label fx:id="lblNotaSemestre" text="Label" />
+                                <Label fx:id="lblPorcentaje" layoutX="72.0" layoutY="138.0" text="0%" />
                             </children>
                             <HBox.margin>
                                 <Insets bottom="10.0" />

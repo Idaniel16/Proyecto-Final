@@ -89,7 +89,7 @@ public class NotaDAOFile implements NotaDao
     private Notas parseNotasFromString(String registro) {
         String[] partes = registro.split(";");
         Curso curso = this.cursoDao.consultarCursoPorCod(Integer.parseInt(partes[0]));
-        Notas notas = new Notas(Double.parseDouble(partes[1]), Double.parseDouble(partes[2]));
+        Notas notas = new Notas(Float.parseFloat(partes[1]), Float.parseFloat(partes[2]));
         notas.setCurso(curso);
         return notas;
     }
