@@ -28,10 +28,10 @@ public class CursoDAOFile implements CursoDao {
     public void registrarCurso(Curso curso) throws CursoRepetidoException
     {
 
-        if(!consultarCursoPorCod(curso.getCodigo()).equals(consultarCursoPorCod(curso.getCodigo())))
-        {
-            throw new CursoRepetidoException();
-        }
+//        if(!consultarCursoPorCod(curso.getCodigo()).equals(consultarCursoPorCod(curso.getCodigo())))
+//        {
+//            throw new CursoRepetidoException();
+//        }
 
         String cursoString = String.format("%d;%s;%s\n", curso.getCodigo(),curso.getNombre(), curso.getCreditos());
         FileWriter fileWriter = null;

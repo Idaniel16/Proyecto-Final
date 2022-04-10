@@ -65,17 +65,15 @@ public class AgregarCursoController
         Curso curso = new Curso(cod,nombreIngresado,creditos);
         try {
             cursoBsn.registrarCurso(curso);
+            alertInformativo();
+            limpiarCampos();
+            txtCodigo.requestFocus();
         }catch (CursoYaExiste cye)
         {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Informacion");
-            alert.setHeaderText("Curso Ya existe");
-            alert.setContentText("Este curso ya está registrado");
-            alert.showAndWait();
+            alertError();
             limpiarCampos();
             txtCodigo.requestFocus();
         }
-        cursoBsn.registrarCurso(curso);
 
 
         limpiarCampos();
@@ -91,6 +89,24 @@ public class AgregarCursoController
         txtCodigo.clear();
         txtNombre.clear();
         txtCreditos.clear();
+    }
+
+    public void alertError()
+    {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText("Curso Ya existe");
+        alert.setContentText("ya está registrado en tu lista de cursos");
+        alert.showAndWait();
+    }
+
+    public void alertInformativo()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Info");
+        alert.setHeaderText("Proceso Exitoso");
+        alert.setContentText("El curso se agregó correctamente");
+        alert.showAndWait();
     }
 
 }

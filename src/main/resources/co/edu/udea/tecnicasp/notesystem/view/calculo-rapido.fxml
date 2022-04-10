@@ -30,9 +30,9 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
                         </rowConstraints>
                         <children>
-                            <TextField fx:id="txtPorcentaje" style="-fx-background-radius: 13;" GridPane.columnIndex="3" />
                             <TextField fx:id="txtNota" style="-fx-background-radius: 13;" GridPane.columnIndex="1" />
-                            <Button alignment="CENTER" cacheShape="false" centerShape="false" contentDisplay="CENTER" defaultButton="true" focusTraversable="false" mnemonicParsing="false" onAction="#calcular_action" scaleShape="false" style="-fx-background-radius: 5;" text="Calcular" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                            <TextField fx:id="txtPorcentaje" style="-fx-background-radius: 13;" GridPane.columnIndex="3" />
+                        <Button alignment="BASELINE_LEFT" defaultButton="true" mnemonicParsing="false" onAction="#agregar_action" style="-fx-background-radius: 5; -fx-alignment: center;" text="Agregar" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets top="10.0" />
                            </GridPane.margin>
@@ -40,7 +40,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" defaultButton="true" mnemonicParsing="false" onAction="#agregar_action" style="-fx-background-radius: 5; -fx-alignment: center;" text="Agregar" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <Button alignment="CENTER" cacheShape="false" centerShape="false" contentDisplay="CENTER" defaultButton="true" focusTraversable="false" mnemonicParsing="false" onAction="#calcular_action" scaleShape="false" style="-fx-background-radius: 5;" text="Calcular" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets top="10.0" />
                            </GridPane.margin>
