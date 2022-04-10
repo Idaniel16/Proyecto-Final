@@ -64,13 +64,18 @@ public class CalculoRapidoController
 
         List<NotaRapida> notaRapidaList = calculoRapidoBsn.consultarCalculoRapido();
         Double notaFinal = 0.0, porcentajeAcumulado = 0.0;
-        for (int i = 0; i < notaRapidaList.size(); i++)
+        if(notaRapidaList.size() > 0)
         {
-            notaFinal = notaFinal + notaRapidaList.get(i).getNota() * (notaRapidaList.get(i).getPorcentaje() / 100);
-            porcentajeAcumulado = porcentajeAcumulado + notaRapidaList.get(i).getPorcentaje();
+            for (int i = 0; i < notaRapidaList.size(); i++) {
+                notaFinal = notaFinal + notaRapidaList.get(i).getNota() * (notaRapidaList.get(i).getPorcentaje() / 100);
+                porcentajeAcumulado = porcentajeAcumulado + notaRapidaList.get(i).getPorcentaje();
+            }
+            lblNota.setText(notaFinal.toString());
+            lblPorcentaje.setText(porcentajeAcumulado.toString() + "%");
+        }else
+        {
+            alertInformativoNota();
         }
-        lblNota.setText(notaFinal.toString());
-        lblPorcentaje.setText(porcentajeAcumulado.toString() + "%");
 
     }
 
@@ -82,6 +87,14 @@ public class CalculoRapidoController
             }
             return null;
         }));
+    }
+    public void alertInformativoNota()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Info");
+        alert.setHeaderText("No hay notas");
+        alert.setContentText("No tienes notas para efectuar la operacion, favor agregar notas");
+        alert.showAndWait();
     }
 
 }

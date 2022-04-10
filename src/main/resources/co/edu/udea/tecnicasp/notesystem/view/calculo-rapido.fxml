@@ -70,8 +70,8 @@
                      <children>
                         <TableView fx:id="tblNotas" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFF99;">
                           <columns>
-                            <TableColumn fx:id="cmlNotas" prefWidth="75.0" text="Notas" />
-                            <TableColumn fx:id="cmlPorcentajes" prefWidth="75.0" text="Porcentajes " />
+                            <TableColumn fx:id="cmlNotas" prefWidth="75.0" style="-fx-alignment: CENTER;" text="Notas" />
+                            <TableColumn fx:id="cmlPorcentajes" prefWidth="75.0" style="-fx-alignment: CENTER;" text="Porcentajes " />
                           </columns>
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

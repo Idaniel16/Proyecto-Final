@@ -91,13 +91,17 @@ public class AgregarNotasPorCursosController
             Curso cursoSeleccionado = this.cmbCurso.getValue();
             List<Notas> notasList = notaBsn.cunsultarNotasPorCurso(cursoSeleccionado.getCodigo());
             Float notaFinal = 0f, porcentajeAcumulado = 0f;
-
-            for (int i = 0; i < notasList.size(); i++) {
-                notaFinal += notasList.get(i).getNotas() * (notasList.get(i).getPorcentajes() / 100);
-                porcentajeAcumulado += notasList.get(i).getPorcentajes();
+            if(notasList.size() > 0) {
+                for (int i = 0; i < notasList.size(); i++) {
+                    notaFinal += notasList.get(i).getNotas() * (notasList.get(i).getPorcentajes() / 100);
+                    porcentajeAcumulado += notasList.get(i).getPorcentajes();
+                }
+                lblNota.setText(notaFinal.toString());
+                lblPorcentaje.setText(porcentajeAcumulado.toString() + "%");
+            }else
+            {
+                alertInformativoNota();
             }
-            lblNota.setText(notaFinal.toString());
-            lblPorcentaje.setText(porcentajeAcumulado.toString() + "%");
         }catch (NullPointerException npe)
         {
             alertInformativo();
@@ -119,8 +123,16 @@ public class AgregarNotasPorCursosController
     {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Info");
-        alert.setHeaderText("Agregar Notas al curso");
-        alert.setContentText("No se puede calcular la nota porque no hay notas para operar");
+        alert.setHeaderText("Seleccione curso");
+        alert.setContentText("No se puede calcular la nota sin antes seleccionar un curso");
+        alert.showAndWait();
+    }
+    public void alertInformativoNota()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Info");
+        alert.setHeaderText("No hay notas");
+        alert.setContentText("No tienes notas para efectuar la operacion, favor agregar notas al curso");
         alert.showAndWait();
     }
 }
