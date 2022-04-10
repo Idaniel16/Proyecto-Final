@@ -4,10 +4,8 @@ import co.edu.udea.tecnicasp.notesystem.bsn.CalculoRapidoBsn;
 import co.edu.udea.tecnicasp.notesystem.model.NotaRapida;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+
 import java.util.List;
 public class CalculoRapidoController
 {
@@ -39,6 +37,19 @@ public class CalculoRapidoController
     private void initialize() {
         cmlNotas.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().getNota()).asObject());
         cmlPorcentajes.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().getPorcentaje()).asObject());
+
+        txtNota.setTextFormatter(new TextFormatter<>(change -> {
+            if (change.getControlNewText().matches("^\\d+$") || change.getControlNewText().isEmpty()) {
+                return change;
+            }
+            return null;
+        }));
+        txtPorcentaje.setTextFormatter(new TextFormatter<>(change -> {
+            if (change.getControlNewText().matches("^\\d+$") || change.getControlNewText().isEmpty()) {
+                return change;
+            }
+            return null;
+        }));
     }
 
 

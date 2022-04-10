@@ -1,6 +1,7 @@
 package co.edu.udea.tecnicasp.notesystem.dao.impl;
 
 import co.edu.udea.tecnicasp.notesystem.dao.CursoDao;
+import co.edu.udea.tecnicasp.notesystem.dao.exceptions.CursoRepetidoException;
 import co.edu.udea.tecnicasp.notesystem.model.Curso;
 
 import java.io.*;
@@ -24,7 +25,13 @@ public class CursoDAOFile implements CursoDao {
 
 
     @Override
-    public void registrarCurso(Curso curso) {
+    public void registrarCurso(Curso curso) throws CursoRepetidoException
+    {
+
+        if(!consultarCursoPorCod(curso.getCodigo()).equals(consultarCursoPorCod(curso.getCodigo())))
+        {
+            throw new CursoRepetidoException();
+        }
 
         String cursoString = String.format("%d;%s;%s\n", curso.getCodigo(),curso.getNombre(), curso.getCreditos());
         FileWriter fileWriter = null;
